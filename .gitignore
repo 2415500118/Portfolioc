@@ -1,0 +1,6 @@
+node_modules/
+dist/
+portfolio/dist/
+*.log
+.env
+.env.*
