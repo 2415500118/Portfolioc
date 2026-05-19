@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import profilePhoto from '../../assets/photo.png'
 
 const stats = [
   { value: '2', label: 'Internships' },
@@ -150,7 +151,7 @@ export default function About() {
                 border: '1px solid var(--border)',
               }}>
                 <img
-                  src="/src/assets/photo.png"
+                  src={profilePhoto}
                   alt="Profile"
                   style={{
                     width: '100%',
