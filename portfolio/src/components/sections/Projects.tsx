@@ -4,6 +4,32 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 const projects = [
   {
     id: 1,
+    title: 'VoxGuard — Voice Authentication',
+    description: 'Speaker identification system using deep learning. Enroll voice profiles and verify users by voice with mel-spectrogram analysis. Features Firebase auth, user history tracking, live recording quality monitoring, and role-based admin controls.',
+    tags: ['Python', 'FastAPI', 'PyTorch', 'Librosa', 'Resemblyzer', 'Firebase', 'JavaScript'],
+    category: 'AI / Full Stack',
+    year: '2026',
+    link: 'https://mini-project-7k5l.onrender.com/',
+    github: 'https://github.com/2415500118/Vox-Guard',
+    featured: true,
+    gradient: 'linear-gradient(135deg, #1a0033 0%, #2d1b69 100%)',
+    accent: '#b366ff',
+  },
+  {
+    id: 2,
+    title: 'BioActivity ML — Drug Screening',
+    description: 'ML pipeline to predict Sertraline-like molecular bioactivity using RDKit molecular descriptors. Trained XGBoost and Gradient Boosting classifiers with AUC/F1 evaluation. Includes a Streamlit prediction UI for raw SMILES input, containerized with Docker.',
+    tags: ['Python', 'RDKit', 'Scikit-learn', 'XGBoost', 'Streamlit', 'Docker'],
+    category: 'ML',
+    year: '2025',
+    link: 'https://ml-project-9bp7.onrender.com',
+    github: 'https://github.com/2415500118/ML_Project',
+    featured: true,
+    gradient: 'linear-gradient(135deg, #081116 0%, #16222a 100%)',
+    accent: '#c49cdd',
+  },
+  {
+    id: 3,
     title: 'CityCraft — AI Travel Planner',
     description: 'Full-stack travel planning app powered by Google Gemini AI for itinerary generation. Uses Supabase for auth/backend, Makcorps API for live hotel data, and React Query for efficient state management. Deployed on Vercel with CI/CD.',
     tags: ['React 18', 'TypeScript', 'Supabase', 'Gemini API', 'Tailwind', 'Vercel'],
@@ -14,19 +40,6 @@ const projects = [
     featured: true,
     gradient: 'linear-gradient(135deg, #071018 0%, #0b1f2a 100%)',
     accent: '#6ec1b4',
-  },
-  {
-    id: 2,
-    title: 'BioActivity ML — Drug Screening',
-    description: 'ML pipeline to predict Sertraline-like molecular bioactivity using RDKit molecular descriptors. Trained XGBoost and Gradient Boosting classifiers with AUC/F1 evaluation. Includes a Streamlit prediction UI for raw SMILES input, containerized with Docker.',
-    tags: ['Python', 'RDKit', 'Scikit-learn', 'XGBoost', 'Streamlit', 'Docker'],
-    category: 'ML',
-    year: '2024',
-    link: 'https://ml-project-9bp7.onrender.com',
-    github: 'https://github.com/2415500118/ML_Project',
-    featured: true,
-    gradient: 'linear-gradient(135deg, #081116 0%, #16222a 100%)',
-    accent: '#c49cdd',
   },
 ]
 
@@ -46,7 +59,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      style={{ padding: '120px 2rem', borderTop: '1px solid var(--border)' }}
+      style={{ padding: 'clamp(60px, 15vw, 120px) 2rem', borderTop: '1px solid var(--border)' }}
     >
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
 

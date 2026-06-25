@@ -32,7 +32,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      style={{ padding: '80px 2rem', borderTop: '1px solid var(--border)', background: 'transparent' }}
+      style={{ padding: 'clamp(60px, 15vw, 80px) 2rem', borderTop: '1px solid var(--border)', background: 'transparent' }}
     >
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ marginBottom: '3rem' }}>

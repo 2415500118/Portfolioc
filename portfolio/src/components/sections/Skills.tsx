@@ -49,7 +49,7 @@ export default function Skills() {
       id="skills"
       ref={ref}
       style={{
-        padding: '120px 2rem',
+        padding: 'clamp(60px, 15vw, 120px) 2rem',
         borderTop: '1px solid var(--border)',
         background: 'var(--bg-2)',
         position: 'relative',

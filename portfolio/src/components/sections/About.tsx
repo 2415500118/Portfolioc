@@ -23,7 +23,7 @@ export default function About() {
       id="about"
       ref={ref}
       style={{
-        padding: '120px 2rem',
+        padding: 'clamp(60px, 15vw, 120px) 2rem',
         position: 'relative',
         borderTop: '1px solid var(--border)',
       }}
@@ -98,7 +98,7 @@ export default function About() {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(4, 1fr)',
                 gap: '1rem',
-              }}>
+              }} className="stats-grid">
                 {stats.map(s => (
                   <div key={s.label} style={{
                     padding: '1rem',
@@ -209,6 +209,7 @@ export default function About() {
       <style>{`
         @media (max-width: 768px) {
           .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
     </section>

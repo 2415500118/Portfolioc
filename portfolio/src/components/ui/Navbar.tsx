@@ -47,7 +47,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="navbar-desktop">
           {links.map((link, i) => (
             <motion.a
               key={link.label}
@@ -154,9 +154,31 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://drive.google.com/drive/folders/1LAW5iVTyKwcOPZfsaEU9k60prh3XqudC?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1rem',
+                color: 'var(--accent)',
+                textDecoration: 'none',
+                letterSpacing: '0.08em',
+              }}
+              onClick={() => setMenuOpen(false)}
+            >
+              Resume ↗
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .navbar-desktop { display: none !important; }
+          .mobile-menu-btn { display: block !important; }
+        }
+      `}</style>
     </>
   )
 }

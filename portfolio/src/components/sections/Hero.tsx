@@ -270,6 +270,10 @@ export default function Hero() {
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
         @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.4 } }
+        
+        @media (max-width: 768px) {
+          #home { padding: 80px 1.5rem 60px !important; }
+        }
       `}</style>
     </section>
   )
