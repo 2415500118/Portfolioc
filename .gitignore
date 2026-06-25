@@ -4,3 +4,4 @@ portfolio/dist/
 *.log
 .env
 .env.*
+!portfolio/.env.example

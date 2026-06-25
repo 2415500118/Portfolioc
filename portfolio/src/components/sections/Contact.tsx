@@ -12,11 +12,21 @@ export default function Contact() {
   const [error, setError] = useState('')
 
   const email = 'ayushgangwar8887@gmail.com'
+  const emailjsConfig = {
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  }
+  const isEmailjsConfigured = Boolean(
+    emailjsConfig.publicKey && emailjsConfig.serviceId && emailjsConfig.templateId,
+  )
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init('deAkfDAZFjCeoeavC') // Get this from emailjs.com dashboard
-  }, [])
+    if (emailjsConfig.publicKey) {
+      emailjs.init(emailjsConfig.publicKey)
+    }
+  }, [emailjsConfig.publicKey])
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email)
@@ -29,10 +39,16 @@ export default function Contact() {
     setSending(true)
     setError('')
 
+    if (!isEmailjsConfigured) {
+      setSending(false)
+      setError('Email sending is not configured. Add VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID, and VITE_EMAILJS_TEMPLATE_ID to portfolio/.env.')
+      return
+    }
+
     try {
       await emailjs.send(
-        'service_x2fb82a', // Get this from emailjs.com
-        'template_ts1n6y4', // Get this from emailjs.com
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         {
           to_email: email,
           from_name: formState.name,
