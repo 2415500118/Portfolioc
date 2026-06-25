@@ -172,7 +172,7 @@ export default function Hero() {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={item} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <motion.div variants={item} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }} className="hero-cta-row">
             <a href="#projects" style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -217,7 +217,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Social row */}
-          <motion.div variants={item} style={{ marginTop: '4rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <motion.div variants={item} style={{ marginTop: '4rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }} className="hero-social-row">
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-3)', letterSpacing: '0.1em' }}>FIND ME ON</span>
             <div style={{ flex: 1, height: 1, background: 'var(--border)', maxWidth: 40 }} />
             {[
@@ -272,7 +272,35 @@ export default function Hero() {
         @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.4 } }
         
         @media (max-width: 768px) {
-          #home { padding: 80px 1.5rem 60px !important; }
+          #home { padding: 88px 1rem 56px !important; }
+
+          #home h1 { font-size: clamp(2.5rem, 14vw, 4.25rem) !important; }
+
+          #home p { font-size: 0.95rem !important; }
+
+          .hero-cta-row {
+            flex-direction: column;
+          }
+
+          .hero-cta-row a {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .hero-social-row {
+            margin-top: 2.5rem !important;
+            flex-wrap: wrap;
+            gap: 0.9rem !important;
+            align-items: flex-start !important;
+          }
+
+          .hero-social-row > div {
+            display: none;
+          }
+
+          #home > div:last-child {
+            display: none;
+          }
         }
       `}</style>
     </section>

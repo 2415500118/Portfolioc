@@ -103,7 +103,7 @@ export default function Navbar() {
             display: 'none',
             background: 'none',
             border: 'none',
-            cursor: 'none',
+            cursor: 'pointer',
             padding: '8px',
             color: 'var(--text)',
           }}
@@ -126,16 +126,16 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             style={{
               position: 'fixed',
-              top: 72,
+              top: 64,
               left: 0,
               right: 0,
               zIndex: 99,
               background: 'rgba(8,8,8,0.97)',
-              padding: '2rem',
+              padding: '1.25rem 1.5rem 1.5rem',
               borderBottom: '1px solid var(--border)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.5rem',
+              gap: '1.25rem',
             }}
           >
             {links.map(link => (
@@ -175,8 +175,10 @@ export default function Navbar() {
 
       <style>{`
         @media (max-width: 768px) {
+          nav { padding: 0 1rem !important; height: 64px !important; }
           .navbar-desktop { display: none !important; }
           .mobile-menu-btn { display: block !important; }
+          .mobile-menu-btn { cursor: pointer !important; }
         }
       `}</style>
     </>

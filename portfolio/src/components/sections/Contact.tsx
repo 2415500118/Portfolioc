@@ -337,7 +337,24 @@ export default function Contact() {
 
       <style>{`
         @media (max-width: 768px) {
+          section#contact { padding: 72px 1rem !important; }
           .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .contact-grid form { padding: 1.5rem !important; }
+          .contact-grid > div:first-child > div:nth-of-type(2) {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: flex-start;
+          }
+          .contact-grid > div:first-child > div:nth-of-type(2) > span {
+            word-break: break-word;
+          }
+          .contact-grid a,
+          .contact-grid input,
+          .contact-grid textarea,
+          .contact-grid button {
+            cursor: auto !important;
+          }
         }
       `}</style>
     </section>

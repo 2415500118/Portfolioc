@@ -103,6 +103,7 @@ export default function Projects() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
             style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}
+            className="projects-filters"
           >
             {categories.map(cat => (
               <button
@@ -146,7 +147,7 @@ export default function Projects() {
                   border: '1px solid',
                   borderColor: hovered === project.id ? project.accent + '33' : 'var(--border)',
                   borderRadius: '12px',
-                  padding: '2rem',
+                  padding: '1.75rem',
                   transition: 'all 0.4s ease',
                   transform: hovered === project.id ? 'translateY(-4px)' : 'none',
                   cursor: 'none',
@@ -156,7 +157,7 @@ export default function Projects() {
                 }}
               >
                 {/* Top row */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }} className="project-top-row">
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{
                       fontFamily: 'var(--font-mono)',
@@ -251,7 +252,12 @@ export default function Projects() {
 
       <style>{`
         @media (max-width: 768px) {
+          section#projects { padding: 72px 1rem !important; }
+          .projects-filters { width: 100%; }
+          .projects-filters button { flex: 1 1 auto; }
+          .project-top-row { flex-direction: column; }
           .projects-grid { grid-template-columns: 1fr !important; }
+          .projects-grid > div { padding: 1.25rem !important; }
         }
       `}</style>
     </section>

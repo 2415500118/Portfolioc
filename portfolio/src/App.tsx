@@ -11,9 +11,12 @@ import Footer from './components/ui/Footer'
 
 export default function App() {
   useEffect(() => {
-    // Prevent default cursor
-    document.body.style.cursor = 'none'
-    return () => { document.body.style.cursor = 'auto' }
+    const prefersFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    document.body.style.cursor = prefersFinePointer ? 'none' : 'auto'
+
+    return () => {
+      document.body.style.cursor = 'auto'
+    }
   }, [])
 
   return (

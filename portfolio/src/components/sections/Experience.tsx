@@ -86,7 +86,9 @@ export default function Experience() {
 
       <style>{`
         @media (max-width: 768px) {
+          section#experience { padding: 72px 1rem !important; }
           .experience-grid { grid-template-columns: 1fr !important; }
+          .experience-grid > div { padding: 1.25rem !important; }
         }
       `}</style>
     </section>

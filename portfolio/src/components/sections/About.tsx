@@ -208,8 +208,11 @@ export default function About() {
 
       <style>{`
         @media (max-width: 768px) {
+          section#about { padding: 72px 1rem !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .about-grid > div:last-child > div:last-child { min-height: 420px !important; }
+          .stats-grid > div { padding: 0.85rem !important; }
         }
       `}</style>
     </section>
